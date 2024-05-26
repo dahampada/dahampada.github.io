@@ -139,8 +139,10 @@ html_head_2 = """
                                 <a href="/sections/na_nha_section.html" class="dropdown-item">න සහ ණ කොටස්</a>
                                 <a href="/sections/pa_pha_section.html" class="dropdown-item">ප සහ ඵ කොටස්</a>
                                 <a href="/sections/ba_bha_section.html" class="dropdown-item">බ සහ භ කොටස්</a>
-             
-                                <a href="/assets/pdfs/pages_472_616.pdf" class="dropdown-item">ප - බ කොටස් </a>
+                                <a href="/sections/ma_section.html" class="dropdown-item">ම කොටස</a>
+                                <a href="/sections/ya_section.html" class="dropdown-item">ය කොටස</a>
+                                
+                             
                                 <a href="assets/pdfs/pages_616_750.pdf" class="dropdown-item">භ - ල කොටස්</a>
                                 <a href="assets/pdfs/pages_750_802.pdf" class="dropdown-item">ව - කොටස</a>
                                 
@@ -304,12 +306,14 @@ def process_section(section_filename, section_name):
 section_names = ['අ කොටස','ඉ කොටස', 'උ කොටස, ඍ කොටස, එ කොටස සහ ඔ කොටස',
                   'ක කොටස සහ', 'ග සහ ඝ කොටස්', 'ච සහ ඡ කොටස්', 'ජ කොටස',
                   'ඤ, ඥ සහ ඨ කොටස්', 'ත සහ ථ කොටස්', 'ද සහ ධ කොටස්',
-                  'න සහ ණ කොටස්', 'ප සහ ඵ කොටස්', 'බ සහ භ කොටස්']
+                  'න සහ ණ කොටස්', 'ප සහ ඵ කොටස්', 'බ සහ භ කොටස්',
+                  'ම කොටස', 'ය කොටස']
 section_name = 'අ කොටස'
 section_filenames = ['a_section', 'e_section', 'u_to_o_sections',
                      'ka_kha_section', 'ga_gha_section', 'cha_chha_section', 'ja_section',
                      'kgna_gna_taa_section', 'tha_thha_section', 'da_dha_section',
-                     'na_nha_section','pa_pha_section', 'ba_bha_section']
+                     'na_nha_section','pa_pha_section', 'ba_bha_section',
+                     'ma_section', 'ya_section']
 
 """ input_file = 'sections/a_section.txt'   
 output_file = 'sections/a_section1.txt' 
