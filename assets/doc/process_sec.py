@@ -141,13 +141,11 @@ html_head_2 = """
                                 <a href="/sections/ba_bha_section.html" class="dropdown-item">බ සහ භ කොටස්</a>
                                 <a href="/sections/ma_section.html" class="dropdown-item">ම කොටස</a>
                                 <a href="/sections/ya_section.html" class="dropdown-item">ය කොටස</a>
-                                
-                             
-                                <a href="assets/pdfs/pages_616_750.pdf" class="dropdown-item">භ - ල කොටස්</a>
-                                <a href="assets/pdfs/pages_750_802.pdf" class="dropdown-item">ව - කොටස</a>
-                                
-                                <a href="/sections/pa_pha_section.html" class="dropdown-item">ස කොටස</a>
-                                <a href="assets/pdfs/pages_947_968.pdf" class="dropdown-item">ශ - හ කොටස්</a>
+                                <a href="/sections/ra_la_section.html" class="dropdown-item">ර සහ ල කොටස්</a>
+                                <a href="/sections/wa_section.html" class="dropdown-item">ව කොටස</a>
+                                <a href="/sections/sa_section.html" class="dropdown-item">ස කොටස</a>
+                                <a href="/sections/sha_shha_section.html" class="dropdown-item">ශ සහ ෂ කොටස්</a>
+                                <a href="/sections/ha_section.html" class="dropdown-item">හ කොටස</a>
                                 <a href="assets/pdfs/pages_969_1017.pdf" class="dropdown-item">සුචිය</a>
                                 <a href="assets/pdfs/pages_1018_1244.pdf" class="dropdown-item">උපග්‍රන්ථ</a>
                                 <a href="assets/pdfs/pages_1245_end.pdf" class="dropdown-item">සිතියම්</a>
@@ -307,13 +305,15 @@ section_names = ['අ කොටස','ඉ කොටස', 'උ කොටස, ඍ �
                   'ක කොටස සහ', 'ග සහ ඝ කොටස්', 'ච සහ ඡ කොටස්', 'ජ කොටස',
                   'ඤ, ඥ සහ ඨ කොටස්', 'ත සහ ථ කොටස්', 'ද සහ ධ කොටස්',
                   'න සහ ණ කොටස්', 'ප සහ ඵ කොටස්', 'බ සහ භ කොටස්',
-                  'ම කොටස', 'ය කොටස']
+                  'ම කොටස', 'ය කොටස', 'ර සහ ල කොටස්', 
+                  'ව කොටස', 'ස කොටස', 'ශ සහ ෂ කොටස්', 'හ කොටස']
 section_name = 'අ කොටස'
 section_filenames = ['a_section', 'e_section', 'u_to_o_sections',
                      'ka_kha_section', 'ga_gha_section', 'cha_chha_section', 'ja_section',
                      'kgna_gna_taa_section', 'tha_thha_section', 'da_dha_section',
                      'na_nha_section','pa_pha_section', 'ba_bha_section',
-                     'ma_section', 'ya_section']
+                     'ma_section', 'ya_section', 'ra_la_section',
+                     'wa_section', 'sa_section', 'sha_shha_section', 'ha_section']
 
 """ input_file = 'sections/a_section.txt'   
 output_file = 'sections/a_section1.txt' 
