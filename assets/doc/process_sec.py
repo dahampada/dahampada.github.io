@@ -1,6 +1,6 @@
 import re
 
-html_head = """<!DOCTYPE html>
+html_head_1 = """<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -65,8 +65,9 @@ html_head = """<!DOCTYPE html>
     
         .subheading {
             font-weight: bold;
-            margin-left: 20px;
+            margin-left: 10px;
             font-size: large;
+            color: blue;
         }
         .heading {
             font-weight: bold;
@@ -79,15 +80,16 @@ html_head = """<!DOCTYPE html>
             margin-left: 20px;
         }
     </style>
+    """
+html_head_2 = """
     <title>දහම් පද මාලාව</title>
 </head>
 <body>
-<header>
-            <!-- place navbar here -->
+    <header>
         <nav
             class="navbar fixed-top navbar-expand-md navbar-dark bg-secondary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><img src="assets/img/dpm_logo-removebg.png" width="30"></a>
+                <a class="navbar-brand" href="/"><img src="/assets/img/dpm_logo-removebg.png" width="30"></a>
                 <button  class="navbar-toggler d-lg-none"
                     type="button"
                     data-bs-toggle="collapse"
@@ -119,9 +121,11 @@ html_head = """<!DOCTYPE html>
                                 id="dropdownId"
                                 data-bs-toggle="dropdown"
                                 aria-haspopup="true"
-                                aria-expanded="false">පොතේ කොටස්</a                    >
+                                aria-expanded="false">පොතේ කොටස්</a>
                             <div  class="dropdown-menu"      aria-labelledby="dropdownId">
-                                <a href="/sections/a_section.html" class="dropdown-item">අ කොටස </a>
+                                <a href="/sections/a_section.html" class="dropdown-item">අ කොටස</a>
+                                <a href="sections/e_section.html" class="dropdown-item">ඉ කොටස </a>
+                                <a href="sections/u_to_o_sections.html" class="dropdown-item">උ, ඍ, එ සහ ඔ කොටස්</a>
                                 <a href="/assets/pdfs/pages_160_301.pdf" class="dropdown-item">ඉ - ජ කොටස් </a>
                                 <a href="/assets/pdfs/pages_301_472.pdf" class="dropdown-item">ඤ - ණ කොටස් </a>
                                 <a href="/assets/pdfs/pages_472_616.pdf" class="dropdown-item">ප - බ කොටස් </a>
@@ -140,8 +144,10 @@ html_head = """<!DOCTYPE html>
             </div>
         </nav>
 
-        </header>
+    </header>
     <main>
+    <p></p>
+    <p></p>
 """
 
 html_tail = """
@@ -196,7 +202,7 @@ def process_file_first_pass(input_file, output_file):
     
 import re
 
-def process_file(input_file, output_file):
+def process_file(input_file, output_file, section_name):
     with open(input_file, 'r', encoding='utf-8') as file:
         lines = file.readlines()
     
@@ -260,21 +266,46 @@ def process_file(input_file, output_file):
                 processed_lines.append(f'<p>{segment}</p>')
     
     with open(output_file, 'w', encoding='utf-8') as file:
-        file.write(html_head)
+        file.write(html_head_1)
+        file.write(f'<title>{section_name}</title>')
+        file.write(html_head_2)
         for line in processed_lines:
             file.write(line + '\n')
         file.write(html_tail)
 
 
 
-# Example usage
+##########################
 
-input_file = 'sections/a_section.txt'   # Replace with your input file name
-output_file = 'sections/a_section1.txt' # Replace with your desired output file name
+def process_section(section_filename, section_name):
+    input_file = f'sections/{section_filename}.txt'
+    im_file = f'sections/{section_filename}_im.txt'
+    output_file = f'sections/{section_filename}.html'
+    process_file_first_pass(input_file, im_file)
+    process_file(im_file, output_file, section_name)
+
+
+section_names = ['අ කොටස','ඉ කොටස', 'උ කොටස, ඍ කොටස, එ කොටස සහ ඔ කොටස',
+                  'ක කොටස සහ ']
+section_name = 'අ කොටස'
+section_filenames = ['a_section', 'e_section', 'u_to_o_sections',
+                     'ka_kha_section']
+
+""" input_file = 'sections/a_section.txt'   
+output_file = 'sections/a_section1.txt' 
 process_file_first_pass(input_file, output_file)
 
 
-input_file = 'sections/a_section1.txt'   # Replace with your input file name
-output_file = 'sections/a_section.html' # Replace with your desired output file name
-process_file(input_file, output_file)
+input_file = 'sections/a_section1.txt'   
+output_file = 'sections/a_section.html' 
+process_file(input_file, output_file, section_name) """
+
+N = len(section_names)
+
+for n in range(1, N+1):
+    section_filename  = section_filenames[n-1]
+    section_name = section_names[n-1]
+    print(f'{n} {section_filenames[n-1]}  {section_name}')
+
+    process_section(section_filename, section_name)
 
