@@ -76,6 +76,9 @@ html_head_1 = """<!DOCTYPE html>
         .keyword {
             font-weight: bold;
         }
+        .keywordseg {
+            margin-left: 10px;
+        }
         .subkeyword {
             margin-left: 20px;
         }
@@ -124,8 +127,10 @@ html_head_2 = """
                                 aria-expanded="false">පොතේ කොටස්</a>
                             <div  class="dropdown-menu"      aria-labelledby="dropdownId">
                                 <a href="/sections/a_section.html" class="dropdown-item">අ කොටස</a>
-                                <a href="sections/e_section.html" class="dropdown-item">ඉ කොටස </a>
-                                <a href="sections/u_to_o_sections.html" class="dropdown-item">උ, ඍ, එ සහ ඔ කොටස්</a>
+                                <a href="/sections/e_section.html" class="dropdown-item">ඉ කොටස </a>
+                                <a href="/sections/u_to_o_sections.html" class="dropdown-item">උ, ඍ, එ සහ ඔ කොටස්</a>
+                                <a href="/sections/ka_kha_section.html" class="dropdown-item">ක සහ ඛ කොටස්</a>
+                                <a href="/sections/ga_gha_section.html" class="dropdown-item">ග සහ ඝ කොටස්</a>
                                 <a href="/assets/pdfs/pages_160_301.pdf" class="dropdown-item">ඉ - ජ කොටස් </a>
                                 <a href="/assets/pdfs/pages_301_472.pdf" class="dropdown-item">ඤ - ණ කොටස් </a>
                                 <a href="/assets/pdfs/pages_472_616.pdf" class="dropdown-item">ප - බ කොටස් </a>
@@ -261,6 +266,9 @@ def process_file(input_file, output_file, section_name):
                 end = segment.index(':') + 1
                 segment = f'{segment[:start]}<span class="keyword">{segment[start:end]}</span>{segment[end:]}'
             
+            if '▲' in segment:
+                segment = f'<div class="keywordseg">{segment}</div>'
+            
             # Only append non-empty segments
             if segment.strip():
                 processed_lines.append(f'<p>{segment}</p>')
@@ -286,10 +294,10 @@ def process_section(section_filename, section_name):
 
 
 section_names = ['අ කොටස','ඉ කොටස', 'උ කොටස, ඍ කොටස, එ කොටස සහ ඔ කොටස',
-                  'ක කොටස සහ ']
+                  'ක කොටස සහ', 'ග සහ ඝ කොටස්']
 section_name = 'අ කොටස'
 section_filenames = ['a_section', 'e_section', 'u_to_o_sections',
-                     'ka_kha_section']
+                     'ka_kha_section', 'ga_gha_section']
 
 """ input_file = 'sections/a_section.txt'   
 output_file = 'sections/a_section1.txt' 
