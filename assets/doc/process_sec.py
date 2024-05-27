@@ -159,8 +159,7 @@ html_head_2 = """
 
     </header>
     <main>
-    <p></p>
-    <p></p>
+
 """
 
 html_tail = """
@@ -285,6 +284,7 @@ def process_file(input_file, output_file, section_name):
         file.write(html_head_1)
         file.write(f'<title>{section_name}</title>')
         file.write(html_head_2)
+        file.write(f'<br><br><h1>{section_name}</h1>\n')
         for line in processed_lines:
             file.write(line + '\n')
         file.write(html_tail)
@@ -302,12 +302,12 @@ def process_section(section_filename, section_name):
 
 
 section_names = ['අ කොටස','ඉ කොටස', 'උ කොටස, ඍ කොටස, එ කොටස සහ ඔ කොටස',
-                  'ක කොටස සහ', 'ග සහ ඝ කොටස්', 'ච සහ ඡ කොටස්', 'ජ කොටස',
+                  'ක සහ ඛ කොටස්', 'ග සහ ඝ කොටස්', 'ච සහ ඡ කොටස්', 'ජ කොටස',
                   'ඤ, ඥ සහ ඨ කොටස්', 'ත සහ ථ කොටස්', 'ද සහ ධ කොටස්',
                   'න සහ ණ කොටස්', 'ප සහ ඵ කොටස්', 'බ සහ භ කොටස්',
                   'ම කොටස', 'ය කොටස', 'ර සහ ල කොටස්', 
                   'ව කොටස', 'ස කොටස', 'ශ සහ ෂ කොටස්', 'හ කොටස']
-section_name = 'අ කොටස'
+
 section_filenames = ['a_section', 'e_section', 'u_to_o_sections',
                      'ka_kha_section', 'ga_gha_section', 'cha_chha_section', 'ja_section',
                      'kgna_gna_taa_section', 'tha_thha_section', 'da_dha_section',
