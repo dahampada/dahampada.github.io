@@ -85,7 +85,6 @@ html_head_1 = """<!DOCTYPE html>
     </style>
     """
 html_head_2 = """
-    <title>දහම් පද මාලාව</title>
 </head>
 <body>
     <header>
@@ -284,7 +283,7 @@ def process_file(input_file, output_file, section_name):
         file.write(html_head_1)
         file.write(f'<title>{section_name}</title>')
         file.write(html_head_2)
-        file.write(f'<br><br><h1>{section_name}</h1>\n')
+        file.write(f'<br><br><br>\n<h1>{section_name}</h1>\n')
         for line in processed_lines:
             file.write(line + '\n')
         file.write(html_tail)
