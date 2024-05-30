@@ -14,7 +14,7 @@ html_head_1 = """<!DOCTYPE html>
 
         gtag('config', 'G-KZ8V4HEJQM');
         </script>
-
+        <script async src="https://cse.google.com/cse.js?cx=f1665ce0444e24639"></script>
     
         <!-- Required meta tags -->
         <meta charset="utf-8" />
@@ -152,6 +152,10 @@ html_head_2 = """
                         </li>
                         
                     </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <!-- Google Custom Search Element -->
+                        <div class="gcse-searchbox-only"></div>
+                    </form>
                 </div>
             </div>
         </nav>
