@@ -31,7 +31,7 @@ html_head_1 = """<!DOCTYPE html>
             <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon//favicon-32x32.png">
             <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon//favicon-16x16.png">
             <link rel="manifest" href="/assets/favicon//site.webmanifest">
-
+<!--
             <style>
             :root {
                 --primary-color: #8B4513;
@@ -110,13 +110,12 @@ html_head_1 = """<!DOCTYPE html>
         .subkeyword {
             margin-left: 20px;
         }
-    </style>
+    </style> -->
+    <link rel="stylesheet" href="/css/section_pages.css">
     """
 html_head_2 = """
 </head>
 <body>
-    <header>
-    </header>
         <nav
             class="navbar fixed-top navbar-expand-md navbar-dark bg-secondary">
             <div class="container-fluid">
@@ -316,7 +315,8 @@ def process_file(input_file, output_file, section_name):
         file.write(html_head_1)
         file.write(f'<title>{section_name}</title>')
         file.write(html_head_2)
-        file.write(f'<br><br><br>\n<h1>{section_name}</h1>\n')
+        file.write(f'<header><br>\n<h1>{section_name}</h1></header>\n')
+        #file.write(f'<br><br><br>\n<h1>{section_name}</h1>\n')
         for line in processed_lines:
             file.write(line + '\n')
         file.write(html_tail)

@@ -1,0 +1,89 @@
+
+:root {
+    --primary-color: #8B4513;
+    --secondary-color: #CD853F;
+    --accent-color: #D2691E;
+    --light-color: #F5F5DC;
+    --dark-color: #5D4037;
+    --text-color: #333;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans Sinhala', sans-serif;
+    /* font-family: 'Abhaya Libre', sans-serif; */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}    
+.btn {
+    background-color: rgb(76, 243, 10);
+    font-size: 18px;
+    font-weight: bolder;
+    color: rgb(44, 10, 235);
+    border-radius: 5000px;
+    transition: all 0.3s;
+    /*
+    text-transform: uppercase;
+    */
+    box-shadow: 0 6px 23px rgba(0,0,0,0.45);
+    animation: fade-up 0.5s 0.4s backwards;
+}
+
+.btn:hover {
+    transform: scale(1.15);
+    background-color: #93f0f7;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+.bolded {
+    font-size: 4pc;
+    font-weight: 900;
+}
+
+
+
+.subheading {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: large;
+    color: blue;
+}
+.heading {
+    font-weight: bold;
+    font-size: 2em;
+    background: linear-gradient(to right, #e1eaf1, #ffffff);
+}
+.keyword {
+    font-weight: bold;
+}
+.keywordseg {
+    margin-left: 10px;
+}
+.subkeyword {
+    margin-left: 20px;
+}
