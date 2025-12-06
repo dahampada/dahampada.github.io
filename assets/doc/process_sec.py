@@ -116,6 +116,7 @@ html_head_2 = """
 </head>
 <body>
     <header>
+    </header>
         <nav
             class="navbar fixed-top navbar-expand-md navbar-dark bg-secondary">
             <div class="container-fluid">
@@ -188,7 +189,7 @@ html_head_2 = """
             </div>
         </nav>
 
-    </header>
+    
     <div class="container">
 
 """
